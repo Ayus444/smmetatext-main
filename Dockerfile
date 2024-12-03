@@ -20,4 +20,4 @@ COPY . .
 RUN pip3 install --no-cache-dir --upgrade --requirement Installer
 
 # This Dockerfile Created By Mr. Ankush Yadav.  Github.com/Mswpresents
-CMD ["python3", "modules/main.py"]
+CMD sh -c "flask run -h 0.0.0.0 -p 8000 & python3 modules/main.py"
