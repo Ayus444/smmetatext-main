@@ -9,7 +9,7 @@ import subprocess
 
 import core as helper
 from utils import progress_bar
-from vars import api_id, api_hash, bot_token
+from modules import vars
 from aiohttp import ClientSession
 from pyromod import listen
 from subprocess import getstatusoutput
@@ -24,9 +24,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 bot = Client(
     "bot",
-    api_id=api_id,
-    api_hash=api_hash,
-    bot_token=bot_token)
+    api_id=vars.api_id,
+    api_hash=vars.api_hash,
+    bot_token=vars.bot_token
+)
 
 
 @bot.on_message(filters.command(["start"]))
